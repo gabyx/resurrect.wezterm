@@ -248,7 +248,7 @@ resurrect.change_state_save_dir("/some/other/directory")
 >
 > ```lua
 > -- Set some directory where Wezterm has write access
-> resurrect.save_state_dir = "C:\\Users\\Admin\\Desktop\\state\\"
+> resurrect.save_state_dir = "C:\\Users\\Admin\\Desktop\\state"
 > ```
 
 ### Events

@@ -41,7 +41,7 @@ end
 
 enable_sub_modules()
 
-pub.save_state_dir = plugin_dir .. separator .. pub.get_require_path() .. separator .. "state" .. separator
+pub.save_state_dir = plugin_dir .. separator .. pub.get_require_path() .. separator .. "state"
 
 ---Changes the directory to save the state to
 ---@param directory string
@@ -57,7 +57,7 @@ local function get_file_path(file_name, type, opt_name)
 	if opt_name then
 		file_name = opt_name
 	end
-	return string.format("%s%s" .. separator .. "%s.json", pub.save_state_dir, type, file_name:gsub(separator, "+"))
+	return string.format("%s" .. separator .. "%s" .. separator .. "%s.json", pub.save_state_dir, type, file_name:gsub(separator, "+"))
 end
 
 ---executes cmd and passes input to stdin
@@ -415,7 +415,7 @@ end
 ---@param file_path string
 function pub.delete_state(file_path)
 	wezterm.emit("resurrect.delete_state.start", file_path)
-	local path = pub.save_state_dir .. file_path
+	local path = pub.save_state_dir .. separator .. file_path
 	local success = os.remove(path)
 	if not success then
 		wezterm.emit("resurrect.error", "Failed to delete state: " .. path)
