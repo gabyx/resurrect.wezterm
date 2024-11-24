@@ -20,8 +20,8 @@ end
 --- Returns the name of the package, used when requiring modules
 --- @return string
 function pub.get_require_path()
-	local path1 = "httpssCssZssZsgithubsDscomsZsMLFlexersZsresurrectsDswezterm"
-	local path2 = "httpssCssZssZsgithubsDscomsZsMLFlexersZsresurrectsDsweztermsZs"
+	local path1 = "httpssCssZssZsgithubsDscomsZsgabyxZsresurrectsDswezterm"
+	local path2 = "httpssCssZssZsgithubsDscomsZsgabyxZsresurrectsDsweztermsZs"
 	return directory_exists(path2) and path2 or path1
 end
 
